@@ -8,6 +8,9 @@
 // Display the number of stops
 // Track the total journeys taken
 // Calculate total cost of journeys taken at $2.50 per ride.
+var tripCount = 0;
+var tripCost = 2.50;
+
 
 function Train(name, stations) {
   this.name = name;
@@ -24,22 +27,15 @@ var lStations = [ "8th", "6th", "Union Square", "3rd", "1st" ];
 var nStations = [ "Times Square", "34th", "28th", "23rd", "Union Square", "8th" ];
 var sixStations = [ "Grand Central", "33rd", "28th", "23rd", "Union Square", "Astor Place" ];
 var gStations = [ "Greenpoint", "Nassau", "Metropolitan", "Broadway" ];
-var sStations = [ "Greenpoint", "Nassau", "Metropolitan", "Broadway" ];
 
 var lTrain = new Train('The L Train', lStations);
 var nTrain = new Train('The N Train', nStations);
 var sixTrain = new Train('The Six Train', sixStations);
 var gTrain = new Train('The G Train', gStations);
 
-var trains = [lTrain, nTrain, sixTrain, gTrain, sTrain];
-
-var msg = "Which train would you \nlike to get on?" + displayLines();
-var startTrain = prompt(msg);
 
 var trains = [lTrain, nTrain, sixTrain, gTrain];
 
-var msg = "Which train would you \nlike to get on?\n" + displayLines();
-var startTrain = prompt(msg);
 
 function displayLines() {
   var trainNames = "";
@@ -84,6 +80,38 @@ function displayStations() {
   }
   return trainStations.trim();
 }
+var msg = "Which train would you \nlike to get on?\n" + displayLines();
+var startTrain = prompt(msg);
 
 var msg2 = "Which station would you \nlike to get on?\n" + displayStations();
 var startStation = prompt(msg2);
+
+var msg3 = "which train would you like to finish your journey with?\n" + displayLines();
+var endTrain = prompt(msg3);
+
+var msg4 = "which station are you ultimately getting off at?\n" + displayStations();
+var endStation = prompt(msg4);
+
+
+function calculateCost()
+  if (startTrain === endTrain) {
+    tripCount += 1;
+    return startLine.distance(startStation, endst);
+    } else {
+      intersection = _.intersection(startStation, endStation);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
