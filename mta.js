@@ -99,6 +99,9 @@ function calculateCost()
     return startLine.distance(startStation, endst);
     } else {
       intersection = _.intersection(startStation, endStation);
+      var firstTrip = startStation.distance(startStation, intersection);
+      var secondTrip = endStation.distance(endStation, intersection);
+      tripCount +=1;
   }
 
 
