@@ -93,19 +93,21 @@ var msg4 = "which station are you ultimately getting off at?\n" + displayStation
 var endStation = prompt(msg4);
 
 
-function calculateCost()
+function calculateTrip() {
   if (startTrain === endTrain) {
     tripCount += 1;
-    return startLine.distance(startStation, endst);
+    return startStation.distance(startStation, endst);
     } else {
       intersection = _.intersection(startStation, endStation);
       var firstTrip = startStation.distance(startStation, intersection);
       var secondTrip = endStation.distance(endStation, intersection);
       tripCount +=1;
+      return firstTrip + secondTrip;
   }
+};
 
-
-
+var msg5 = "You've taken " + calculateTrip() + " trips so far! Look at you go, Tin Tin!"
+  alert(msg5);
 
 
 
